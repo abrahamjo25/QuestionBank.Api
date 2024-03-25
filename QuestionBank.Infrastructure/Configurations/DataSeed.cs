@@ -1,0 +1,218 @@
+﻿using Microsoft.EntityFrameworkCore;
+using QuestionBank.Domain.Models;
+using QuestionBank.Domain.Models.Clients;
+using QuestionBank.Domain.Models.User;
+
+namespace QuestionBank.Infrastructure.Configurations
+{
+    public static class DataSeed
+    {
+        public static void seed(ModelBuilder builder)
+        {
+            builder.Entity<Client>().HasData(Client.CreatClient("QuestionBank", "QuestionBank", "$2b$10$UBR4e8chMW.lGAax7sjduur2wcijJs5.9uhI0KvJWyhMNEWEqXOA6", "QuestionBank Access Managment Client", 360_000, 360_000, 1, true));
+            builder.Entity<Service>().HasData(Service.Create("QuestionBankService", "QuestionBank Service", 1, true));
+
+            builder.Entity<ApiClaim>().HasData(
+                ApiClaim.Create("TokenValidator-ValidateAll", 1, false, 1, true),
+                ApiClaim.Create("TokenValidator-ValidateClient", 1, false, 2, true),
+                ApiClaim.Create("TokenValidator-ValidateEmailToken", 1, false, 3, true),
+                ApiClaim.Create("TokenValidator-GenerateEmailToken", 1, false, 4, true),
+                ApiClaim.Create("Client-GetAll", 1, true, 5, true),
+                ApiClaim.Create("Client-GetById", 1, true, 6, true),
+                ApiClaim.Create("Client-CreateClient", 1, true, 7, true),
+                ApiClaim.Create("Client-GetClient", 1, true, 8, true),
+                ApiClaim.Create("Client-UpdateClient", 1, true, 9, true),
+                ApiClaim.Create("Client-DeleteClient", 1, true, 10, true),
+                ApiClaim.Create("Client-Login", 1, false, 11, true),
+                ApiClaim.Create("Client-RefreshToken", 1, false, 12, true),
+                ApiClaim.Create("Client-ActivateDeactivateClient", 1, true, 13, true),
+                ApiClaim.Create("ClientClaim-Create", 1, true, 14, true),
+                ApiClaim.Create("ClientClaim-GetAll", 1, true, 15, true),
+                ApiClaim.Create("ClientClaim-Get", 1, true, 16, true),
+                ApiClaim.Create("ClientClaim-Update", 1, true, 17, true),
+                ApiClaim.Create("ClientClaim-Delete", 1, true, 18, true),
+                ApiClaim.Create("ClientClaim-GetByClientId", 1, true, 19, true),
+                ApiClaim.Create("ClientClaim-UpdateStatus", 1, true, 20, true),
+                ApiClaim.Create("ClientApiResource-CreateClient", 1, true, 21, true),
+                ApiClaim.Create("Password-ChangePassword", 1, true, 22, true),
+                ApiClaim.Create("Password-ResetPassword", 1, false, 23, true),
+                ApiClaim.Create("Password-ForgotPassword", 1, false, 24, true),
+                ApiClaim.Create("Role-Create", 1, true, 25, true),
+                ApiClaim.Create("Role-GetAll", 1, true, 26, true),
+                ApiClaim.Create("Role-Get", 1, true, 27, true),
+                ApiClaim.Create("Role-Update", 1, true, 28, true),
+                ApiClaim.Create("Role-Delete", 1, true, 29, true),
+                ApiClaim.Create("Role-UpdateStatus", 1, true, 30, true),
+                ApiClaim.Create("Role-GetByClientId", 1, true, 31, true),
+                ApiClaim.Create("User-CreateUser", 1, true, 32, true),
+                ApiClaim.Create("ClientClaim-Views", 1, true, 33),
+                ApiClaim.Create("Users-View", 1, true, 34, true),
+                ApiClaim.Create("Dashboard-View", 1, true, 35, true),
+                ApiClaim.Create("User-DeleteUser", 1, true, 36, true),
+                ApiClaim.Create("User-ActivateDeactivateUser", 1, true, 37, true),
+                ApiClaim.Create("Roles-View", 1, true, 38, true),
+                ApiClaim.Create("Clients-View", 1, true, 39, true),
+                ApiClaim.Create("Services-View", 1, true, 40, true),
+                ApiClaim.Create("ApiClaims-View", 1, true, 41, true),
+                ApiClaim.Create("ApiClaim-Create", 1, true, 42, true),
+                ApiClaim.Create("ApiClaim-Get", 1, true, 43, true),
+                ApiClaim.Create("ApiClaim-GetAll", 1, true, 44, true),
+                ApiClaim.Create("ApiClaim-Update", 1, true, 45, true),
+                ApiClaim.Create("ApiClaim-Delete", 1, true, 46, true),
+                ApiClaim.Create("ApiClaim-UpdateStatus", 1, true, 47, true),
+                ApiClaim.Create("ApiClaim-RequiredTokenUpdate", 1, true, 48, true),
+                ApiClaim.Create("ApiClaim-GetAllByServiceId", 1, true, 49, true),
+                ApiClaim.Create("Service-Create", 1, true, 50, true),
+                ApiClaim.Create("Service-ActivateDeactivateService", 1, true, 51, true),
+                ApiClaim.Create("Service-GetAll", 1, true, 52, true),
+                ApiClaim.Create("Service-Update", 1, true, 53, true),
+                ApiClaim.Create("Service-Delete", 1, true, 54, true),
+                ApiClaim.Create("Service-GetByID", 1, true, 55, true),
+                ApiClaim.Create("Actions-IdentityClaimSeeder", 1, true, 56, true),
+                ApiClaim.Create("User-Login", 1, false, 57, true));
+
+            builder.Entity<ClientApiResources>().HasData(
+                ClientApiResources.Create(1, 1, 1, true),
+                ClientApiResources.Create(1, 2, 2, true),
+                ClientApiResources.Create(1, 3, 3, true),
+                ClientApiResources.Create(1, 4, 4, true),
+                ClientApiResources.Create(1, 5, 5, true),
+                ClientApiResources.Create(1, 6, 6, true),
+                ClientApiResources.Create(1, 7, 7, true),
+                ClientApiResources.Create(1, 8, 8, true),
+                ClientApiResources.Create(1, 9, 9, true),
+                ClientApiResources.Create(1, 10, 10, true),
+                ClientApiResources.Create(1, 11, 11, true),
+                ClientApiResources.Create(1, 12, 12, true),
+                ClientApiResources.Create(1, 13, 13, true),
+                ClientApiResources.Create(1, 14, 14, true),
+                ClientApiResources.Create(1, 15, 15, true),
+                ClientApiResources.Create(1, 16, 16, true),
+                ClientApiResources.Create(1, 17, 17, true),
+                ClientApiResources.Create(1, 18, 18, true),
+                ClientApiResources.Create(1, 19, 19, true),
+                ClientApiResources.Create(1, 20, 20, true),
+                ClientApiResources.Create(1, 21, 21, true),
+                ClientApiResources.Create(1, 22, 22, true),
+                ClientApiResources.Create(1, 23, 23, true),
+                ClientApiResources.Create(1, 24, 24, true),
+                ClientApiResources.Create(1, 25, 25, true),
+                ClientApiResources.Create(1, 26, 26, true),
+                ClientApiResources.Create(1, 27, 27, true),
+                ClientApiResources.Create(1, 28, 28, true),
+                ClientApiResources.Create(1, 29, 29, true),
+                ClientApiResources.Create(1, 30, 30, true),
+                ClientApiResources.Create(1, 31, 31, true),
+                ClientApiResources.Create(1, 32, 32, true),
+                ClientApiResources.Create(1, 33, 33, true),
+                ClientApiResources.Create(1, 34, 34, true),
+                ClientApiResources.Create(1, 35, 35, true),
+                ClientApiResources.Create(1, 36, 36, true),
+                ClientApiResources.Create(1, 37, 37, true),
+                ClientApiResources.Create(1, 38, 38, true),
+                ClientApiResources.Create(1, 39, 39, true),
+                ClientApiResources.Create(1, 40, 40, true),
+                ClientApiResources.Create(1, 41, 41, true),
+                ClientApiResources.Create(1, 42, 42, true),
+                ClientApiResources.Create(1, 43, 43, true),
+                ClientApiResources.Create(1, 44, 44, true),
+                ClientApiResources.Create(1, 45, 45, true),
+                ClientApiResources.Create(1, 46, 46, true),
+                ClientApiResources.Create(1, 47, 47, true),
+                ClientApiResources.Create(1, 48, 48, true),
+                ClientApiResources.Create(1, 49, 49, true),
+                ClientApiResources.Create(1, 50, 50, true),
+                ClientApiResources.Create(1, 51, 51, true),
+                ClientApiResources.Create(1, 52, 52, true),
+                ClientApiResources.Create(1, 53, 53, true),
+                ClientApiResources.Create(1, 54, 54, true),
+                ClientApiResources.Create(1, 55, 55, true),
+                ClientApiResources.Create(1, 56, 56, true),
+                ClientApiResources.Create(1, 57, 57, true));
+
+            builder.Entity<ClientClaim>().HasData(
+                ClientClaim.Create("Dashboard-View", "Dashboard-View", "Dashboard-View", 1, 1, true),
+                ClientClaim.Create("Users-View", "Users-View", "Users-View", 1, 2, true),
+                ClientClaim.Create("Roles-View", "Roles-View", "Roles-View", 1, 3, true),
+                ClientClaim.Create("Clients-View", "Clients-View", "Clients-View", 1, 4, true),
+                ClientClaim.Create("Services-View", "Services-View", "Services-View", 1, 5, true),
+                ClientClaim.Create("ApiClaims-View", "ApiClaims-View", "ApiClaims-View", 1, 6, true),
+                ClientClaim.Create("ClientClaim-Views", "ClientClaim-Views", "ClientClaim-Views", 1, 7, true),
+                ClientClaim.Create("Users-Add", "Users-Add", "Users-Add", 1, 8, true),
+                ClientClaim.Create("Users-Delete", "Users-Delete", "Users-Delete", 1, 9, true),
+                ClientClaim.Create("Users-Deactivate", "Users-Deactivate", "Users-Deactivate", 1, 10, true),
+                ClientClaim.Create("Users-Edit", "Users-Edit", "Users-Edit", 1, 11, true),
+                ClientClaim.Create("Reset-Password", "Reset-Password", "Reset-Password", 1, 12, true),
+                ClientClaim.Create("Roles-Add", "Roles-Add", "Roles-Add", 1, 13, true),
+                ClientClaim.Create("Roles-Deactivate", "Roles-Deactivate", "Roles-Deactivate", 1, 14, true),
+                ClientClaim.Create("Roles-Edit", "Roles-Edit", "Roles-Edit", 1, 15, true),
+                ClientClaim.Create("Roles-Delete", "Roles-Delete", "Roles-Delete", 1, 16, true),
+                ClientClaim.Create("Clients-Add", "Clients-Add", "Clients-Add", 1, 17, true),
+                ClientClaim.Create("Clients-Add", "Clients-Add", "Clients-Add", 1, 18, true),
+                ClientClaim.Create("Clients-Deactivate", "Clients-Deactivate", "Clients-Deactivate", 1, 19, true),
+                ClientClaim.Create("Clients-Edit", "Clients-Edit", "Clients-Edit", 1, 20, true),
+                ClientClaim.Create("Service-Add", "Service-Add", "Service-Add", 1, 21, true),
+                ClientClaim.Create("Service-Delete", "Service-Delete", "Service-Delete", 1, 22, true),
+                ClientClaim.Create("Service-Deactivate", "Service-Deactivate", "Service-Deactivate", 1, 23, true),
+                ClientClaim.Create("Service-Edit", "Service-Edit", "Service-Edit", 1, 24, true),
+                ClientClaim.Create("ApiClaim-Add", "ApiClaim-Add", "ApiClaim-Add", 1, 25, true),
+                ClientClaim.Create("ApiClaim-Delete", "ApiClaim-Delete", "ApiClaim-Delete", 1, 26, true),
+                ClientClaim.Create("ApiClaim-Deactivate", "ApiClaim-Deactivate", "ApiClaim-Deactivate", 1, 27, true),
+                ClientClaim.Create("ApiClaim-Edit", "ApiClaim-Edit", "ApiClaim-Edit", 1, 28, true),
+                ClientClaim.Create("ClientClaim-Add", "ClientClaim-Add", "ClientClaim-Add", 1, 29, true),
+                ClientClaim.Create("ClientClaim-Delete", "ClientClaim-Delete", "ClientClaim-Delete", 1, 30, true),
+                ClientClaim.Create("ClientClaim-Deactivate", "ClientClaim-Deactivate", "ClientClaim-Deactivate", 1, 31, true),
+                ClientClaim.Create("ClientClaim-Edit", "ClientClaim-Edit", "ClientClaim-Edit", 1, 32, true),
+                ClientClaim.Create("Change-Password", "Change-Password", "Change-Password", 1, 33, true));
+
+            builder.Entity<Role>().HasData(
+                Role.Create("Admin", "Admin", 1, 1, true)
+                );
+
+            builder.Entity<RoleClaim>().HasData(
+                new RoleClaim { Id = 1, RoleId = 1, ClientClaimId = 1 },
+                new RoleClaim { Id = 2, RoleId = 1, ClientClaimId = 2 },
+                new RoleClaim { Id = 3, RoleId = 1, ClientClaimId = 3 },
+                new RoleClaim { Id = 4, RoleId = 1, ClientClaimId = 4 },
+                new RoleClaim { Id = 5, RoleId = 1, ClientClaimId = 5 },
+                new RoleClaim { Id = 6, RoleId = 1, ClientClaimId = 6 },
+                new RoleClaim { Id = 7, RoleId = 1, ClientClaimId = 7 },
+                new RoleClaim { Id = 8, RoleId = 1, ClientClaimId = 8 },
+                new RoleClaim { Id = 9, RoleId = 1, ClientClaimId = 9 },
+                new RoleClaim { Id = 10, RoleId = 1, ClientClaimId = 10 },
+                new RoleClaim { Id = 11, RoleId = 1, ClientClaimId = 11 },
+                new RoleClaim { Id = 12, RoleId = 1, ClientClaimId = 12 },
+                new RoleClaim { Id = 13, RoleId = 1, ClientClaimId = 13 },
+                new RoleClaim { Id = 14, RoleId = 1, ClientClaimId = 14 },
+                new RoleClaim { Id = 15, RoleId = 1, ClientClaimId = 15 },
+                new RoleClaim { Id = 16, RoleId = 1, ClientClaimId = 16 },
+                new RoleClaim { Id = 17, RoleId = 1, ClientClaimId = 17 },
+                new RoleClaim { Id = 18, RoleId = 1, ClientClaimId = 18 },
+                new RoleClaim { Id = 19, RoleId = 1, ClientClaimId = 19 },
+                new RoleClaim { Id = 20, RoleId = 1, ClientClaimId = 20 },
+                new RoleClaim { Id = 21, RoleId = 1, ClientClaimId = 21 },
+                new RoleClaim { Id = 22, RoleId = 1, ClientClaimId = 22 },
+                new RoleClaim { Id = 23, RoleId = 1, ClientClaimId = 23 },
+                new RoleClaim { Id = 24, RoleId = 1, ClientClaimId = 24 },
+                new RoleClaim { Id = 25, RoleId = 1, ClientClaimId = 25 },
+                new RoleClaim { Id = 26, RoleId = 1, ClientClaimId = 26 },
+                new RoleClaim { Id = 27, RoleId = 1, ClientClaimId = 27 },
+                new RoleClaim { Id = 28, RoleId = 1, ClientClaimId = 28 },
+                new RoleClaim { Id = 29, RoleId = 1, ClientClaimId = 29 },
+                new RoleClaim { Id = 30, RoleId = 1, ClientClaimId = 30 },
+                new RoleClaim { Id = 31, RoleId = 1, ClientClaimId = 31 },
+                new RoleClaim { Id = 32, RoleId = 1, ClientClaimId = 32 },
+                new RoleClaim { Id = 33, RoleId = 1, ClientClaimId = 33 });
+
+            builder.Entity<IdentityUser>().HasData(
+            //(request.Username, request.Email, request.FirstName, request.LastName, request.Password, request.IsSuperAdmin, request.IsAccountLocked, request.PhoneNumber, request.IsCompany);
+            IdentityUser.CreateUser("abrahamjo", "abirham.johannes@gmail.com", "Abraham", "Yohannes", "$2b$10$UBR4e8chMW.lGAax7sjduur2wcijJs5.9uhI0KvJWyhMNEWEqXOA6", true, false, "+251921175520", 1)
+                );
+            builder.Entity<IdentityUserRole>().HasData(
+                new IdentityUserRole { Id = 1, UserId = 1, RoleId = 1, }
+                );
+        }
+
+
+    }
+}
